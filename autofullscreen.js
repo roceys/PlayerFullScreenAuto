@@ -10,7 +10,7 @@
 // @inject-into content
 // @run-at        document-idle
 // @author       Roceys
-// @match        *://live.bilibili.com/*
+// @match        *://*.bilibili.com/*
 // @match        *://www.huya.com/*
 // ==/UserScript==
 
@@ -20,6 +20,9 @@ var selector = {
   'live.bilibili.com': {
     'on': "i[class='live-icon-web-fullscreen']"
   },
+   'www.bilibili.com':{
+      'on':"div[class~='bilibili-player-video-btn-widescreen']"
+   },
   'www.huya.com': {
     'on': "span[class='player-fullpage-btn'][title='剧场模式']"
   }
