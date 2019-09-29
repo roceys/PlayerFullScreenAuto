@@ -1,17 +1,19 @@
 // ==UserScript==
 // @name         Player FullScreen Auto
-// @name:zh-CN 虎牙\批站自动全屏宽屏播放器
+// @name:zh-CN 网页自动加载全屏宽屏播放器
 // @namespace   https://roceys.cn
-// @version      20190925
+// @version      20190929
 // @description Auto Player full screen for web.
-// @description:zh-CN  虎牙批站自动网页宽屏/全屏播放器
+// @description:zh-CN  虎牙+哔哩哔哩+Youtube直播&视频平台自动全屏宽屏播放器
 // @require    https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
 // @require    https://greasyfork.org/scripts/48306-waitforkeyelements/code/waitForKeyElements.js?version=275769
 // @inject-into content
 // @run-at        document-idle
 // @author       Roceys
+// @license       Apache License
 // @match        *://*.bilibili.com/*
 // @match        *://www.huya.com/*
+// @match        *://*.youtube.com/*
 // ==/UserScript==
 
 'use strict'
@@ -24,7 +26,10 @@ var selector = {
       'on':"div[class~='bilibili-player-video-btn-widescreen']"
    },
   'www.huya.com': {
-    'on': "span[class='player-fullpage-btn'][title='剧场模式']"
+    'on': "span[class='player-fullpage-btn']"
+  },
+  'www.youtube.com': {
+    'on': "button[class~='ytp-size-button']"
   }
 }
 
